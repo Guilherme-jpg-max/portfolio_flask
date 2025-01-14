@@ -1,0 +1,137 @@
+/* Home Section */
+#home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(34, 34, 34, 1), rgba(0, 0, 0, 0.8)); /* Gradiente de fundo */
+    color: #f0f0f0;
+    text-align: center;
+    position: relative;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  
+  .home-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1600px; /* Largura máxima para o conteúdo */
+  }
+  
+  #home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('path-to-background-image.jpg'); /* Imagem de fundo opcional */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    z-index: -1;
+    filter: blur(10px); /* Desfoque no fundo */
+  }
+  
+  .intro {
+    max-width: 90%; /* Ajuste a largura da introdução */
+    padding: 90px;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra mais intensa na introdução */
+    color: #f0f0f0;
+    height: 70%;
+  }
+  
+  /* Estilização do contêiner de imagem */
+  .image-container {
+    max-width: 50%; /* Largura da imagem - pode ser ajustado conforme necessário */
+    position: relative;
+    overflow: hidden; /* Garante que a imagem não saia do contêiner arredondado */
+    width: 400px; /* Largura fixa para a imagem redonda */
+    height: 400px; /* Altura fixa igual à largura */
+  }
+  
+  /* Estilização da imagem dentro do contêiner */
+  .image-container img {
+    width: 100%; /* Faz a imagem ocupar toda a largura disponível */
+    height: 100%; /* Faz a imagem ocupar toda a altura disponível */
+    object-fit: cover; /* Isso faz a imagem cobrir o espaço disponível sem distorção */
+    border-radius: 50%; /* Borda totalmente arredondada para tornar a imagem circular */
+  }
+  
+  
+  .intro h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #f7f7f7;
+    letter-spacing: 2px;
+  }
+  
+  .roles p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #aaa;
+    margin-bottom: 15px;
+  }
+  
+  .intro p {
+    font-size: 1rem;
+    color: #ddd;
+    margin-bottom: 30px;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .actions .btn {
+    background-color: #444;
+    color: #f0f0f0;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
+  
+  .actions .btn:hover {
+    background-color: #f0f0f0;
+    color: #333;
+    border-color: #333;
+    transform: translateY(-5px); /* Adiciona efeito de elevação ao passar o mouse */
+  }
+  
+  @media (max-width: 768px) {
+    #home {
+      height: auto;
+      padding-top: 40px;
+    }
+  
+    .intro {
+      padding: 20px;
+    }
+  
+    .intro h2 {
+      font-size: 2.5rem;
+    }
+  
+    .roles p {
+      font-size: 1rem;
+    }
+  
+    .intro p {
+      font-size: 0.9rem;
+    }
+  
+    .actions {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }

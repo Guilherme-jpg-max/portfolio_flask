@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<section id="home">
+    <div class="home-container">
+        <div class="intro">
+            <h2>Guilherme</h2>
+            <div class="roles">
+                <p>Back-end Developer</p>
+                <p>Full Stack Developer</p>
+            </div>
+            <p>Passionate about creating efficient solutions.</p>
+            <div class="actions">
+                <a href="{{ url_for('main.projects') }}" class="btn">View Projects</a>
+                <a href="{{ url_for('main.contact') }}" class="btn">Hire Me</a>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='img/tela.jpg') }}" alt="Your Image" />
+        </div>
+    </div>
+</section>
+{% endblock %}

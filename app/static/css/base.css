@@ -1,0 +1,130 @@
+/* Geral */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
+    scroll-behavior: smooth; /* Rolagem suave */
+  }
+  
+  /* Header */
+  header {
+    background-color: #2a2a2a;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 2px solid #444; /* Borda inferior no header */
+    background: linear-gradient(135deg, #2a2a2a, #333); /* Gradiente suave no fundo */
+  }
+  
+  
+  .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 50px;
+    height: 50px;
+    background-color: #444;
+    border-radius: 50%;
+    margin-left: -450px;
+  }
+  
+  header h1 {
+    font-size: 1.5rem;
+    color: #f7f7f7;
+    margin-left: -250px;
+  }
+  
+  /* Navegação */
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    display: flex;
+    justify-content: flex-start; /* Alinha os itens à esquerda */
+    gap: 25px;
+  }
+  
+  nav ul li a {
+    color: #f0f0f0;
+    font-size: 1rem;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease; /* Transição para borda e cor */
+    text-decoration: none; /* Remove a linha embaixo */
+    border: 2px solid transparent; /* Sem borda inicial */
+  }
+  
+  nav ul li a:hover {
+    border: 2px solid #444; /* Exibe a borda ao passar o mouse */
+    color: #f0f0f0; /* Mantém a cor do texto */
+    background-color: transparent; /* Remove o fundo */
+  }
+  
+  /* Seções de Tela Cheia */
+  section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    box-sizing: border-box;
+    width: 100%;
+    border-bottom: 2px solid #444; /* Borda inferior para separar seções */
+    background-color: #2a2a2a;
+    background: linear-gradient(135deg, rgba(34, 34, 34, 1), rgba(0, 0, 0, 0.8)); /* Gradiente suave de fundo */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombras suaves para dar destaque */
+    border-radius: 12px; /* Bordas arredondadas nas seções */
+  }
+  
+  section:nth-child(odd) {
+    background-color: #333; /* Alterar fundo para seções ímpares */
+  }
+  
+  section > .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave ao redor dos contêineres */
+  }
+/* Estilo para o footer */
+footer {
+    background-color: #333; /* Cor de fundo do footer */
+    padding: 20px 0; /* Padding interno */
+    position: relative; /* Garantir que o footer fique no final da página */
+    width: 100%; /* Largura total */
+    bottom: 0; /* Fixa o footer no final da tela */
+    text-align: center; /* Centralizar o conteúdo */
+    color: #ddd; /* Cor do texto */
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3); /* Sombras do footer para dar destaque */
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)); /* Gradiente suave no fundo */
+  }
+  
+  /* Ajuste para o conteúdo do container dentro do footer */
+  footer .container {
+    max-width: 1200px; /* Largura máxima do container */
+    width: 90%; /* Largura do container com base na tela */
+    margin: 0 auto; /* Centraliza o container */
+  }
+  
+  
+  /* Ajuste para o texto dentro do footer */
+  footer p {
+    font-size: 1rem; /* Tamanho do texto */
+    margin: 0; /* Remove a margem */
+  }
+    
