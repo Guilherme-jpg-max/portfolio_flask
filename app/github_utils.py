@@ -3,9 +3,7 @@ import requests
 
 
 def get_github_repos():
-    """
-    Obtém os repositórios públicos do usuário especificado no GitHub.
-    """
+
     github_user = 'Guilherme-jpg-max'
     token = os.getenv('GITHUB_TOKEN')
 
@@ -20,7 +18,7 @@ def get_github_repos():
         repos = response.json()
 
         # Seleção manual de repositórios pelo nome
-        selected_repos = ['portfolio', 'lista_tarefas']
+        selected_repos = ['portfolio_flask', 'lista_tarefas']
         filtered_repos = [repo for repo in repos if repo['name'] in selected_repos]
         return filtered_repos
     else:
