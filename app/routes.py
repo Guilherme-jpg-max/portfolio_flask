@@ -12,7 +12,7 @@ def get_repos():
 @bp.route('/')
 def index():
     repos = get_repos()
-    return render_template('index.html', repos=repos, title="Home")
+    return render_template('index.html', repos=repos, title="Portfólio Guilherme Carlos")
 
 @bp.route('/projects')
 def projects():

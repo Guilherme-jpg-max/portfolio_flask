@@ -10,12 +10,20 @@
     <link href="{{ url_for('static', filename='css/home.css') }}" rel="stylesheet" />
     <link href="{{ url_for('static', filename='css/projects.css') }}" rel="stylesheet" />
     <link href="{{ url_for('static', filename='css/skills_me.css') }}" rel="stylesheet" />
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}" type="image/png">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
     <title>{{ title }}</title>
 </head>
 <body>
     <header>
         <div class="header-content">
-            <div class="logo"></div>
+            <div class="logo">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo">
+            </div>
+            
             <h1>Portfolio of a Back-end Developer</h1>
             <nav>
                 <ul>
@@ -24,12 +32,21 @@
                     <li class="{{ 'active' if section == 'about' else '' }}"><a href="#about">About Me</a></li>
                     <li class="{{ 'active' if section == 'projects' else '' }}"><a href="#projects">Projects</a></li>
                     <li class="{{ 'active' if section == 'contact' else '' }}"><a href="#contact">Contact</a></li>
-                  </ul>
-                  
+                </ul>
             </nav>
+
+            <!-- Ícones de redes sociais -->
+            <div class="social-links">
+                <a href="https://github.com/Guilherme-jpg-max" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="http://www.linkedin.com/in/guilherme-carlos-99b83b273" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
         </div>
     </header>
-    
+
     <main>
         <section id="home">
             <div class="home-container">
@@ -37,7 +54,7 @@
                     <h2>Guilherme</h2>
                     <div class="roles">
                         <p>Back-end Developer</p>
-                        <p>Full Stack Developer</p>
+                        <p>Experienced in Python, Django, Flask, PostgreSQL, MySQL, and Java.</p>
                     </div>
                     <p>Passionate about creating efficient solutions.</p>
                     <div class="actions">
@@ -61,19 +78,21 @@
                 <li>PostgreSQL</li>
                 <li>MySQL</li>
                 <li>Java</li>
+                <li>Git</li>
+                <li>GitHub</li>
             </ul>
         </section>
 
         <section id="about">
             <div class="container">
                 <h2>About Me</h2>
-                <p>Experienced in Python, Django, Flask, PostgreSQL, MySQL, and Java. Thrives on challenges and continuous learning.</p>
+                <p>Thrives on challenges and continuous learning.</p>
             </div>
         </section>
 
         <section id="projects">
             <h2>My Projects</h2>
-            <p>Explore some of my recent projects and contributions to the development community.</p>
+            <p>Explore some of my recent projects.</p>
             <div class="projects-container">
                 {% for project in repos %}
                 <article class="project">
@@ -115,7 +134,7 @@
     
     <footer>
         <div class="container">
-            <p>© 2024 Guilherme. All rights reserved.</p>
+            <p>© 2024 Guilherme Carlos.</p>
         </div>
     </footer>
 
