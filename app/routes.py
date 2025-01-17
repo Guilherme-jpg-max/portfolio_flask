@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash
+from flask import Blueprint, render_template, request, redirect, url_for, flash, jsonify
 from app import mail
 from .forms import process_contact_form
 import os
@@ -6,48 +6,35 @@ from .github_utils import get_github_repos
 
 bp = Blueprint('main', __name__)
 
+def get_repos():
+    return get_github_repos()
 
 @bp.route('/')
-def home():
-    repos = get_github_repos()
-    return render_template('home.html', repos=repos)
+def index():
+    repos = get_repos()
+    return render_template('index.html', repos=repos, title="Home")
+
+@bp.route('/projects')
+def projects():
+    repos = get_repos()
+    return render_template('index.html', repos=repos, title="Projects", section='projects')
 
 
 @bp.route('/about')
 def about():
-    return render_template('about.html')
+    return render_template('index.html', title="About Me", section='about')
 
-
-@bp.route('/contact', methods=['GET', 'POST'])
+@bp.route('/contact', methods=['POST'])
 def contact():
-    if request.method == 'POST':
-        success, msg = process_contact_form(request, mail, os)
-        # Se o processamento do formulário foi bem-sucedido
-        if success:
-            try:
-                mail.send(msg)
-                flash("Mensagem enviada com sucesso!", 'success')
-                return redirect(url_for('main.home'))
-
-            except Exception as e:
-                # Em caso de erro no envio do e-mail
-                print(f"Erro ao enviar e-mail: {e}")
-                flash("Ocorreu um erro ao enviar a mensagem. Tente novamente mais tarde.", 'error')
-                return render_template('contact.html')
-
-        # Caso tenha falhado na validação ou no processamento do formulário
-        return render_template('contact.html')
-
-    return render_template('contact.html')
-
-
-@bp.route('/projects')
-def projects():
-    repos = get_github_repos()
-    return render_template('projects.html', repos=repos)
-
+    success, msg = process_contact_form(request, mail, os)
+    if success:
+        try:
+            mail.send(msg)
+            return jsonify({"success": True, "message": "Mensagem enviada com sucesso!"}), 200
+        except Exception:
+            return jsonify({"success": False, "message": "Ocorreu um erro ao enviar a mensagem. Tente novamente mais tarde."}), 500
+    return jsonify({"success": False, "message": "Dados inválidos."}), 400
 
 @bp.route('/skills')
 def skills():
-    return render_template('skills_me.html')
-
+    return render_template('index.html', title="Skills", section='skills')

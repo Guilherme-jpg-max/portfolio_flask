@@ -1,54 +1,51 @@
-/* Título e subseção */
 #projects h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    text-align: center;
-    border-bottom: 3px solid #444;
-    padding-bottom: 10px;
-    color: #f7f7f7;
-  }
-  
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 3px solid #444;
+  padding-bottom: 10px;
+  color: #f7f7f7;
+}
+
 #projects p {
-    font-size: 1.2rem;
-    text-align: center;
-    color: #ddd;
-    margin-bottom: 40px;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #ddd;
+  margin-bottom: 40px;
 }
-  
-  /* Container dos projetos */
+
 .projects-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin: 40px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 40px 0;
 }
-  
+
 .project {
-    background-color: #444;
-    color: #ddd;
-    padding: 20px;
-    border-radius: 8px;
-    width: 30%; /* Ocupa 30% da largura disponível */
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
-    background: linear-gradient(135deg, rgba(44, 44, 44, 1), rgba(26, 26, 26, 1)); /* Gradiente para o fundo */
+  background-color: #444;
+  color: #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  width: 30%;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, rgba(44, 44, 44, 1), rgba(26, 26, 26, 1));
 }
-  
+
 .project:hover {
-    transform: translateY(-5px); /* Efeito de flutuar */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Sombra mais forte ao passar o mouse */
-    background: linear-gradient(135deg, rgba(26, 26, 26, 1), rgba(44, 44, 44, 1)); /* Gradiente invertido ao passar o mouse */
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, rgba(26, 26, 26, 1), rgba(44, 44, 44, 1));
 }
-  
-  
-  /* Ajustes responsivos para telas menores */
+
 @media (max-width: 768px) {
-    .project {
-      width: 100%; /* Faz os projetos ocuparem toda a largura em telas menores */
-    }
-}
-#projects h2 {
-    font-size: 2rem;
+  .project {
+      width: 100%;
+  }
+
+  #projects h2 {
+      font-size: 2rem;
+  }
 }

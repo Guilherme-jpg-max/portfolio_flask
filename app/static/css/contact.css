@@ -1,108 +1,102 @@
-/* Estilo para o container dentro da seção de contato */
+
 #contact .container {
-    width: 85%; /* Diminuindo a largura da container */
-    max-width: 600px; /* Largura máxima para a container */
-    margin: 0 auto; /* Centralizando a container */
-    padding: 20px; /* Adicionando padding interno */
-    background-color: #333;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    box-sizing: border-box; /* Garantindo que o padding não afete a largura */
-    background: linear-gradient(135deg, rgba(44, 44, 44, 1), rgba(0, 0, 0, 0.6)); /* Gradiente de fundo */
+  width: 85%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #333;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  background: linear-gradient(135deg, rgba(44, 44, 44, 1), rgba(0, 0, 0, 0.6));
+}
+
+#contact h2 {
+  font-size: 2.5rem;
+  color: #f7f7f7;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #555;
+}
+
+#contact p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #ddd;
+  margin-bottom: 30px;
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+#contact input, #contact textarea {
+  padding: 15px;
+  font-size: 1.1rem;
+  border: 1px solid #555;
+  border-radius: 8px;
+  background-color: #444;
+  color: #ddd;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+
+#contact input:focus, #contact textarea:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+#contact textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+
+#contact .form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+#contact .btn {
+  background-color: #555;
+  color: #ddd;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 48%;
+  text-align: center;
+}
+
+#contact .btn:hover {
+  background-color: #444;
+  transform: translateY(-2px);
+}
+
+#contact .btn:active {
+  transform: translateY(2px);
+}
+
+
+@media (max-width: 768px) {
+  #contact .container {
+      width: 90%;
   }
-  
-  
-  /* Ajustando o título da seção */
-  #contact h2 {
-    font-size: 2.5rem;
-    color: #f7f7f7;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 3px solid #555;
-  }
-  
-  /* Ajustando o texto descritivo da seção */
-  #contact p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: #ddd;
-    margin-bottom: 30px;
-  }
-  
-  /* Estilo para o formulário */
-  #contact form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-  }
-  
-  /* Estilo dos campos de input e textarea */
-  #contact input, #contact textarea {
-    padding: 15px;
-    font-size: 1.1rem;
-    border: 1px solid #555;
-    border-radius: 8px;
-    background-color: #444;
-    color: #ddd;
-    width: 100%; /* Garantindo que os campos não saiam do container */
-    box-sizing: border-box; /* Garantindo que o padding não afete a largura */
-    transition: border-color 0.3s ease;
-  }
-  
-  /* Estilo do campo de texto ao focar */
-  #contact input:focus, #contact textarea:focus {
-    border-color: #007BFF; /* Cor de destaque */
-    outline: none;
-  }
-  
-  /* Estilo para o campo textarea */
-  #contact textarea {
-    height: 150px;
-    resize: vertical;
-  }
-  
-  /* Estilo para os botões */
+
   #contact .form-actions {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
+      flex-direction: column;
+      gap: 15px;
   }
-  
+
   #contact .btn {
-    background-color: #555;
-    color: #ddd;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    width: 48%;
-    text-align: center;
+      width: 100%;
   }
-  
-  #contact .btn:hover {
-    background-color: #444;
-    transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
-  }
-  
-  #contact .btn:active {
-    transform: translateY(2px); /* Efeito de pressão ao clicar */
-  }
-  
-  /* Responsividade */
-  @media (max-width: 768px) {
-    #contact .container {
-        width: 90%; /* Ajustando o container para largura maior em telas menores */
-    }
-  
-    #contact .form-actions {
-        flex-direction: column;
-        gap: 15px;
-    }
-  
-    #contact .btn {
-        width: 100%; /* Botões com largura total em telas pequenas */
-    }
-  }
+}

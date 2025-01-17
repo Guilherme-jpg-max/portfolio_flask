@@ -18,7 +18,7 @@ def get_github_repos():
         repos = response.json()
 
         # Seleção manual de repositórios pelo nome
-        selected_repos = ['', 'lista_tarefas']
+        selected_repos = ['portfolio_flask', 'lista_tarefas', 'arquivospc']
         filtered_repos = [repo for repo in repos if repo['name'] in selected_repos]
         return filtered_repos
     else:
