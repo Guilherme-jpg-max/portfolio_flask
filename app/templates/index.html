@@ -35,7 +35,6 @@
                 </ul>
             </nav>
 
-            <!-- Ícones de redes sociais -->
             <div class="social-links">
                 <a href="https://github.com/Guilherme-jpg-max" target="_blank">
                     <i class="fab fa-github"></i>
@@ -71,17 +70,58 @@
         <section id="skills">
             <h2>Skills</h2>
             <p>Here are some of the technologies I work with:</p>
-            <ul>
-                <li>Python</li>
-                <li>Django</li>
-                <li>Flask</li>
-                <li>PostgreSQL</li>
-                <li>MySQL</li>
-                <li>Java</li>
-                <li>Git</li>
-                <li>GitHub</li>
-            </ul>
+            <div class="skills-container">
+                <div class="skill">
+                    <button onclick="toggleSkill('python')">Python</button>
+                    <p id="python" class="skill-description">
+                        Habilidades: POO, estrutura de dados, Django, Flask
+                    </p>
+                </div>
+                <div class="skill">
+                    <button onclick="toggleSkill('django')">Django</button>
+                    <p id="django" class="skill-description">
+                        Habilidades: Criação de APIs, autenticação, templates
+                    </p>
+                </div>
+                <div class="skill">
+                    <button onclick="toggleSkill('flask')">Flask</button>
+                    <p id="flask" class="skill-description">
+                        Habilidades: Desenvolvimento web leve, APIs RESTful
+                    </p>
+                </div>
+                <div class="skill">
+                    <button onclick="toggleSkill('postgresql')">PostgreSQL</button>
+                    <p id="postgresql" class="skill-description">
+                        Habilidades: Modelagem de banco de dados, queries SQL avançadas
+                    </p>
+                </div>
+                <div class="skill">
+                    <button onclick="toggleSkill('mysql')">MySQL</button>
+                    <p id="mysql" class="skill-description">
+                        Habilidades: Design de banco de dados, otimização de consultas
+                    </p>
+                </div>
+                <div class="skill">
+                    <button onclick="toggleSkill('java')">Java</button>
+                    <p id="java" class="skill-description">
+                        Habilidades: Desenvolvimento orientado a objetos, estruturas de dados
+                    </p>
+                </div>
+                <div class="skill">
+                    <button onclick="toggleSkill('git')">Git</button>
+                    <p id="git" class="skill-description">
+                        Habilidades: Controle de versão, branch management
+                    </p>
+                </div>
+                <div class="skill">
+                    <button onclick="toggleSkill('github')">GitHub</button>
+                    <p id="github" class="skill-description">
+                        Habilidades: Hospedagem de código, gerenciamento de projetos
+                    </p>
+                </div>
+            </div>
         </section>
+        
 
         <section id="about">
             <div class="container">
@@ -139,5 +179,7 @@
     </footer>
 
     <script src="{{ url_for('static', filename='js/flash_messages.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/skills.js') }}"></script>
+
 </body>
 </html>

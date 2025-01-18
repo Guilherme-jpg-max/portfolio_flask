@@ -1,53 +1,24 @@
-/* Seção Skills */
-#skills {
-  background-color: #444;
-  color: #ddd;
-  padding: 40px 20px;
-  margin: 0;
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  background: linear-gradient(135deg, rgba(44, 44, 44, 1), rgba(26, 26, 26, 1)); /* Gradiente sutil no fundo */
-  box-sizing: border-box;
-}
-
-/* Estilo do título da seção */
-#skills h2 {
-  font-size: 3rem;
-  color: #f7f7f7;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 3px solid #555;
-  letter-spacing: 1px;
-}
-
-#skills p {
-  font-size: 1.2rem;
-  color: #ccc;
-  margin-bottom: 30px;
-  line-height: 1.8;
-}
-
+/* Container com Grid para 4 colunas */
 .skills-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colunas fixas */
+  gap: 20px; /* Espaçamento entre os itens */
   margin-top: 30px;
+  padding: 0 10px; /* Ajuste de espaçamento interno */
 }
 
+/* Estilo de cada habilidade */
 .skill {
   background-color: #333;
   color: #ddd;
   padding: 20px;
   border-radius: 8px;
-  width: 200px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza o conteúdo */
 }
 
 .skill:hover {
@@ -56,18 +27,65 @@
   background-color: #555;
 }
 
-@media (max-width: 768px) {
-  #skills h2 {
-      font-size: 2.5rem;
-  }
+/* Botões mais compactos */
+.skill button {
+  background-color: #444;
+  color: #fff;
+  border: none;
+  padding: 8px 15px; /* Botões menores */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 0.9rem; /* Texto do botão mais compacto */
+  margin-top: 10px;
+}
 
+.skill button:hover {
+  background-color: #555;
+  transform: translateY(-2px);
+}
+
+/* Descrição da habilidade */
+.skill-description {
+  display: none;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #ddd;
+  text-align: center; /* Centraliza o texto da descrição */
+}
+
+.skill-description.active {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
   .skills-container {
-      gap: 20px;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas para telas médias */
   }
+}
 
-  .skill {
-      width: 100%;
-      max-width: 300px;
-      margin: 0 auto; 
+@media (max-width: 768px) {
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas para telas pequenas */
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-container {
+    grid-template-columns: 1fr; /* 1 coluna para telas muito pequenas */
   }
 }
