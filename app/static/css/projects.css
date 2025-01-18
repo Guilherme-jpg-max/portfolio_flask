@@ -60,6 +60,12 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
+/* Responsividade */
+@media (max-width: 1024px) {
+  .project {
+    flex: 1 1 calc(50% - 20px); /* Ocupa metade da largura em telas menores */
+  }
+}
 
 @media (max-width: 768px) {
   .project {

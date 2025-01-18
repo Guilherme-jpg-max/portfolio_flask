@@ -103,9 +103,43 @@
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   #contact .container {
       width: 90%;
+      padding: 20px;
+  }
+
+  #contact h2 {
+      font-size: 1.8rem;
+  }
+
+  #contact p {
+      font-size: 1rem;
+  }
+
+  #contact .form-actions {
+      flex-direction: column;
+      gap: 15px;
+  }
+
+  #contact .btn {
+      width: 100%;
+  }
+}
+
+/* Responsividade para telas menores que 768px */
+@media screen and (max-width: 768px) {
+  #contact .container {
+      width: 90%;
+      padding: 20px;
+  }
+
+  #contact h2 {
+      font-size: 1.6rem;
+  }
+
+  #contact p {
+      font-size: 1rem;
   }
 
   #contact .form-actions {

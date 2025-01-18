@@ -1,3 +1,4 @@
+/* Body */
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #1e1e1e;
@@ -7,21 +8,26 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   scroll-behavior: smooth;
-}
-.logo img {
-  width: 50px; 
-  height: auto;  
-}
-.logo {
-  display: flex;
-  align-items: center;  /* Alinha verticalmente a logo */
-  justify-content: flex-start; /* Garante que fique alinhada à esquerda */
-  margin-left: -20; /* Sem margem à esquerda */
+  padding-right: 10px;
 }
 
+/* Logo */
+.logo img {
+  width: 50px;
+  height: auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: -20px;
+}
+
+/* Header */
 header {
   background-color: #2a2a2a;
-  padding: 10px 0;
+  padding: 10px 0; /* Ajuste para reduzir o tamanho do header quando o menu não está ativo */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   position: fixed;
   top: 0;
@@ -29,8 +35,11 @@ header {
   z-index: 1000;
   border-bottom: 2px solid #444;
   background: linear-gradient(135deg, #2a2a2a, #333);
+  transition: top 0.3s ease-in-out, padding 0.3s ease; /* Adicionando transição para o padding */
+  min-height: 60px; /* Reduzido para evitar sobreposição */
 }
 
+/* Header Content */
 .header-content {
   max-width: 1200px;
   margin: 0 auto;
@@ -40,12 +49,15 @@ header {
   align-items: center;
 }
 
+/* Header h1 */
 header h1 {
   font-size: 1.5rem;
   color: #f7f7f7;
   margin-left: 10px;
+  transition: font-size 0.3s ease;
 }
 
+/* Navigation */
 nav ul {
   list-style: none;
   padding: 0;
@@ -66,15 +78,30 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  border: 2px solid #444;
+  background: linear-gradient(45deg, #b0b0b0, #333);
   color: #f0f0f0;
-  background-color: transparent;
+  border: 2px solid #f0f0f0;
 }
 
+nav ul li a.active {
+  color: #f0f0f0;
+  font-size: 1rem;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  background: linear-gradient(45deg, #b0b0b0, #333);
+  border: 2px solid #f0f0f0;
+}
+
+/* Social Links */
 .social-links {
   display: flex;
   gap: 20px;
   align-items: center;
+  position: absolute;
+  right: 20px;
+  top: 10px; /* Ajustando a posição para não sobrepor a navegação */
 }
 
 .social-links a {
@@ -87,13 +114,34 @@ nav ul li a:hover {
   color: #007BFF;
 }
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2a2a2a;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Sections */
 section {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 80px 20px;
+  padding: 160px 20px 20px;
   box-sizing: border-box;
   width: 100%;
   border-bottom: 2px solid #444;
@@ -115,6 +163,7 @@ section > .container {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Footer */
 footer {
   background-color: #333;
   padding: 20px 0;
@@ -138,6 +187,7 @@ footer p {
   margin: 0;
 }
 
+/* Flash Messages */
 .flash-messages {
   position: fixed;
   top: 50%;
@@ -180,4 +230,76 @@ footer p {
 
 #flash-container {
   margin-top: 20px;
+}
+
+/* Menu Hamburguer */
+.menu-hamburguer {
+  display: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #f0f0f0;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
+/* Responsividade para telas menores que 1024px */
+@media screen and (max-width: 1024px) {
+  /* Logo e Título - Remover logo e h1 */
+  .logo, header h1 {
+    display: none;
+  }
+
+  /* Mostrar ícones do menu hambúrguer, LinkedIn e GitHub */
+  .social-links {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    position: absolute;
+    right: 20px;
+    top: 10px; /* Ajustando a posição para não sobrepor a navegação */
+  }
+
+  .social-links a {
+    font-size: 1.8rem;
+  }
+
+  /* Header Content */
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Navegação */
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+    text-align: center;
+    padding-top: 15px;
+  }
+
+  nav ul li a {
+    padding: 12px;
+    font-size: calc(0.8rem + 0.5vw);
+  }
+
+  /* Mostrar o menu hambúrguer em dispositivos menores */
+  .menu-hamburguer {
+    display: block;
+  }
+
+  /* Ajuste de espaço superior para as seções */
+  section {
+    padding-top: 160px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  nav ul.active {
+    display: flex;
+    margin-top: 80px; /* Evita sobreposição dos ícones com o conteúdo do menu */
+  }
 }
