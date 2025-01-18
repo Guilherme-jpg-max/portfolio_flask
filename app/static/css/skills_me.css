@@ -9,22 +9,30 @@
 
 /* Estilo de cada habilidade */
 .skill {
-  background-color: #333;
+  background: linear-gradient(135deg, #2a2a2a, #444); /* Degradê mais suave */
   color: #ddd;
-  padding: 20px;
-  border-radius: 8px;
+  padding: 25px;
+  border-radius: 10px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: center; /* Centraliza o conteúdo */
 }
 
+/* Efeito de hover mais visível */
 .skill:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-  background-color: #555;
+  background: linear-gradient(135deg, #444, #555);
+}
+
+/* Quando o card é expandido */
+.skill.expanded {
+  transform: scale(1.1); /* Aumenta o tamanho do card */
+  z-index: 10; /* Garante que o card expandido fique sobre os outros */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Efeito de sombra mais forte */
 }
 
 /* Botões mais compactos */
@@ -52,10 +60,13 @@
   font-size: 0.9rem;
   color: #ddd;
   text-align: center; /* Centraliza o texto da descrição */
+  opacity: 0; /* Inicialmente invisível */
+  transition: opacity 0.3s ease-in-out;
 }
 
 .skill-description.active {
   display: block;
+  opacity: 1; /* Tornar visível */
   animation: fadeIn 0.3s ease-in-out;
 }
 
@@ -70,13 +81,37 @@
   }
 }
 
-/* Responsividade */
-@media (max-width: 992px) {
+/* Estilo para o título e primeiro parágrafo da section */
+#skills h2 {
+  font-size: 3rem;
+  color: #f7f7f7;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #555;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-top: 0;
+}
+
+#skills p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ddd;
+  margin-bottom: 25px;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsividade para telas menores que 1024px */
+@media (max-width: 1024px) {
   .skills-container {
     grid-template-columns: repeat(3, 1fr); /* 3 colunas para telas médias */
   }
 }
 
+/* Responsividade para telas menores que 768px */
 @media (max-width: 768px) {
   .skills-container {
     grid-template-columns: repeat(2, 1fr); /* 2 colunas para telas pequenas */
@@ -84,6 +119,7 @@
   }
 }
 
+/* Responsividade para telas menores que 480px */
 @media (max-width: 480px) {
   .skills-container {
     grid-template-columns: 1fr; /* 1 coluna para telas muito pequenas */

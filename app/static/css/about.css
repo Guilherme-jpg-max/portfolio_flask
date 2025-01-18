@@ -1,72 +1,78 @@
+/* Fundo geral mais escuro para a tela */
 #about {
-  background-color: #444;
+  background: linear-gradient(135deg, #1a1a1a, #333); /* Fundo mais escuro */
   color: #ddd;
-  padding: 40px 0;
+  padding: 50px 0; /* Aumentado o padding para dar mais espaço vertical */
   margin: 0;
   min-height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   text-align: center;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  border-radius: 16px;
 }
 
+/* Container principal */
 #about .container {
-  padding: 40px 20px;
-  background-color: #333;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin: 20px 0;
-  width: 90%;
-  max-width: 1200px;
-  min-height: 500px;
+  padding: 50px 30px; /* Aumentado o padding interno */
+  background: linear-gradient(135deg, #2a2a2a, #444); /* Degradê interno do container */
+  border-radius: 16px; /* Bordas mais arredondadas */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Sombra mais intensa */
+  margin: 20px auto;
+  width: 90%; /* Largura ajustável */
+  max-width: 1000px; /* Aumentado para um container maior */
+  min-height: 600px; /* Altura mínima maior */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Efeito Flutuante no Hover */
+#about .container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Título */
 #about h2 {
-  font-size: 3rem;
+  font-size: 2.8rem; /* Tamanho ajustado */
   color: #f7f7f7;
   margin-bottom: 20px;
   padding-bottom: 10px;
   border-bottom: 3px solid #555;
 }
 
+/* Parágrafo */
 #about p {
-  font-size: 1.2rem;
-  line-height: 1.8;
+  font-size: 1rem;
+  line-height: 1.6;
   color: #ddd;
-  margin-bottom: 25px;
-  text-align: center;
+  margin-bottom: 20px; /* Mais espaço entre os parágrafos */
+  text-align: justify;
 }
 
 /* Responsividade para telas menores que 1024px */
 @media screen and (max-width: 1024px) {
-  #about {
-    width: 90%;
+  #about .container {
     padding: 40px 20px;
+    width: 95%;
+    max-width: 850px; /* Reduzido proporcionalmente */
   }
 
   #about h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   #about p {
-    font-size: 1rem;
-  }
-
-  #about .container {
-    width: 100%;
-    padding: 20px;
-    margin: 10px 0;
+    font-size: 0.95rem;
   }
 }
 
 /* Responsividade para telas menores que 768px */
 @media screen and (max-width: 768px) {
-  #about {
-    width: 90%;
-    padding: 40px 20px;
+  #about .container {
+    padding: 30px 15px;
+    max-width: 700px; /* Container menor para dispositivos móveis */
   }
 
   #about h2 {
@@ -74,12 +80,6 @@
   }
 
   #about p {
-    font-size: 1rem;
-  }
-
-  #about .container {
-    width: 100%;
-    padding: 20px;
-    margin: 10px 0;
+    font-size: 0.9rem;
   }
 }
