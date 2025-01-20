@@ -52,7 +52,6 @@
 
     <main>
         <section id="home">
-            <!-- Seção Principal -->
             <div class="main-section">
               <div class="text-content">
                 <h2 class="main-title">Hey Dev, Me Guilherme.</h2>
@@ -169,14 +168,14 @@
                 <div id="flash-container"></div>
        
                 <form id="contact-form" action="{{ url_for('main.contact') }}" method="post">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" name="name" placeholder="Nome:" required>
                 
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    <input type="email" id="email" name="email" placeholder="Email:" required>
                 
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" placeholder="Your message here" required></textarea>
+                    <label for="message">Menssagem</label>
+                    <textarea id="message" name="message" placeholder="Menssagem:" required></textarea>
                 
                     <div class="form-actions">
                         <button type="reset" class="btn">Corrigir</button>

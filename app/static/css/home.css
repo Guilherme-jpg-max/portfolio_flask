@@ -1,42 +1,45 @@
-/* Estilo Principal */
+
 #home {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Ocupa toda a altura da tela */
-  background-color: #1a1a1a; /* Cor mais escura de fundo */
+  height: 100vh;
+  background: linear-gradient(135deg, #1a1a1a, #333);
   color: #f7f7f7;
+  overflow: hidden;
 }
 
 .main-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
-  max-width: 1200px;
+  width: 90%;
+  max-width: 1100px;
   margin: 0 auto;
   gap: 30px;
-  background-color: #2a2a2a; /* Cor de fundo da seção */
+  background: linear-gradient(145deg, #2e2e2e, #1f1f1f);
   padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra suave para efeito de flutuação */
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  min-height: 60vh;
 }
 
 .text-content {
   flex: 1;
-  text-align: center; /* Centraliza o texto */
+  text-align: center;
 }
 
 .main-title {
-  font-size: 3rem; /* Tamanho maior para o título */
+  font-size: 3.5rem;
   margin-bottom: 20px;
-  color: #f1f1f1; /* Cor mais clara */
+  color: #f1f1f1;
 }
 
 .subtitle {
-  font-size: 1.3rem; /* Aumenta o subtítulo */
+  font-size: 1.5rem;
   margin-bottom: 30px;
-  color: #bbb; /* Cor cinza para o subtítulo */
+  color: #cccccc;
 }
 
 .actions {
@@ -48,65 +51,102 @@
 .actions .btn {
   display: inline-block;
   padding: 14px 28px;
-  font-size: 1.1rem;
-  border-radius: 8px; /* Bordas arredondadas mais suaves */
+  font-size: 1.2rem;
+  border-radius: 12px;
   text-decoration: none;
+  color: #fff;
+  background: linear-gradient(90deg, #444, #555);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease;
 }
 
-.actions .btn.primary {
-  background: #444;
-  color: #fff;
+.actions .btn:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(90deg, #555, #666);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
 }
 
-.actions .btn.secondary {
-  background: #555;
-  color: #fff;
-}
-
-/* Estilo para a imagem dentro do container */
 .image-container {
   flex: 1;
   display: flex;
   justify-content: center;
-  height: 600px; /* Define a altura fixa */
-  overflow: hidden; /* Remove o scroll externo */
-  background-color: #333; /* Cor de fundo para a área da imagem */
-  border-radius: 10px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Sombra suave no card da imagem */
+  align-items: center;
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
 }
 
 .image-container img {
-  width: 100%;        /* Faz a imagem ocupar 100% da largura do container */
-  height: auto;       /* Mantém a proporção da imagem */
-  object-fit: contain; /* Garante que a imagem se ajuste ao tamanho sem distorção */
-  border-radius: 10px; /* Bordas arredondadas, caso deseje */
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Sombra para dar um efeito de profundidade */
-  transition: transform 0.3s ease; /* Efeito de flutuação no hover */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  clip-path: inset(0 round 15px);
 }
 
-/* Efeito de flutuação no hover */
 .image-container img:hover {
-  transform: translateY(-10px); /* Efeito flutuante ao passar o mouse */
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .main-section {
     flex-direction: column;
-    text-align: center;
+    gap: 20px;
+    padding: 30px;
+    width: 80%;
+    min-height: 50vh;
   }
 
   .text-content {
     margin-bottom: 20px;
   }
 
-  .image-container {
-    height: 400px; /* Ajuste a altura da imagem conforme necessário */
+  .main-title {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+  }
+
+  .actions .btn {
+    font-size: 1rem;
+    padding: 12px 24px;
   }
 
   .image-container img {
-    max-width: 90%; /* Garante que a imagem se ajuste à tela */
-    height: auto;   /* Mantém a proporção */
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-section {
+    width: 90%;
+    padding: 20px;
+    min-height: 40vh;
+  }
+
+  .text-content {
+    margin-bottom: 20px;
+  }
+
+  .main-title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .actions .btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  .image-container img {
+    max-width: 100%;
   }
 }

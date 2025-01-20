@@ -1,4 +1,3 @@
-/* Body */
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #1e1e1e;
@@ -11,7 +10,7 @@ body {
   padding-right: 10px;
 }
 
-/* Logo */
+
 .logo img {
   width: 50px;
   height: auto;
@@ -24,10 +23,9 @@ body {
   margin-left: -20px;
 }
 
-/* Header */
 header {
   background-color: #2a2a2a;
-  padding: 10px 0; /* Ajuste para reduzir o tamanho do header quando o menu não está ativo */
+  padding: 10px 0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   position: fixed;
   top: 0;
@@ -35,11 +33,11 @@ header {
   z-index: 1000;
   border-bottom: 2px solid #444;
   background: linear-gradient(135deg, #2a2a2a, #333);
-  transition: top 0.3s ease-in-out, padding 0.3s ease; /* Adicionando transição para o padding */
-  min-height: 60px; /* Reduzido para evitar sobreposição */
+  transition: top 0.3s ease-in-out, padding 0.3s ease;
+  min-height: 60px;
 }
 
-/* Header Content */
+
 .header-content {
   max-width: 1200px;
   margin: 0 auto;
@@ -49,7 +47,7 @@ header {
   align-items: center;
 }
 
-/* Header h1 */
+
 header h1 {
   font-size: 1.5rem;
   color: #f7f7f7;
@@ -57,7 +55,7 @@ header h1 {
   transition: font-size 0.3s ease;
 }
 
-/* Navigation */
+
 nav ul {
   list-style: none;
   padding: 0;
@@ -94,14 +92,14 @@ nav ul li a.active {
   border: 2px solid #f0f0f0;
 }
 
-/* Social Links */
+
 .social-links {
   display: flex;
   gap: 20px;
   align-items: center;
   position: absolute;
   right: 20px;
-  top: 10px; /* Ajustando a posição para não sobrepor a navegação */
+  top: 10px;
 }
 
 .social-links a {
@@ -114,7 +112,7 @@ nav ul li a.active {
   color: #007BFF;
 }
 
-/* Custom Scrollbar */
+
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -163,7 +161,6 @@ section > .container {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Footer */
 footer {
   background-color: #333;
   padding: 20px 0;
@@ -187,7 +184,6 @@ footer p {
   margin: 0;
 }
 
-/* Flash Messages */
 .flash-messages {
   position: fixed;
   top: 50%;
@@ -232,7 +228,7 @@ footer p {
   margin-top: 20px;
 }
 
-/* Menu Hamburguer */
+
 .menu-hamburguer {
   display: none;
   cursor: pointer;
@@ -243,35 +239,35 @@ footer p {
   top: 20px;
 }
 
-/* Responsividade para telas menores que 1024px */
+
 @media screen and (max-width: 1024px) {
-  /* Logo e Título - Remover logo e h1 */
+
   .logo, header h1 {
     display: none;
   }
 
-  /* Mostrar ícones do menu hambúrguer, LinkedIn e GitHub */
+
   .social-links {
     display: flex;
     justify-content: flex-start;
     gap: 20px;
     position: absolute;
     right: 20px;
-    top: 10px; /* Ajustando a posição para não sobrepor a navegação */
+    top: 10px;
   }
 
   .social-links a {
     font-size: 1.8rem;
   }
 
-  /* Header Content */
+
   .header-content {
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
 
-  /* Navegação */
+
   nav ul {
     display: none;
     flex-direction: column;
@@ -286,12 +282,12 @@ footer p {
     font-size: calc(0.8rem + 0.5vw);
   }
 
-  /* Mostrar o menu hambúrguer em dispositivos menores */
+
   .menu-hamburguer {
     display: block;
   }
 
-  /* Ajuste de espaço superior para as seções */
+
   section {
     padding-top: 160px;
   }
@@ -300,6 +296,6 @@ footer p {
 @media screen and (max-width: 1024px) {
   nav ul.active {
     display: flex;
-    margin-top: 80px; /* Evita sobreposição dos ícones com o conteúdo do menu */
+    margin-top: 80px;
   }
 }

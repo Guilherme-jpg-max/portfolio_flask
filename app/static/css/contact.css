@@ -1,43 +1,38 @@
-/* Estilização do Container do Formulário de Contato */
 #contact .container {
-  width: 80%; /* Largura reduzida */
-  max-width: 500px; /* Tamanho máximo reduzido */
-  margin: 0 auto; /* Centraliza horizontalmente */
-  padding: 30px; /* Aumento do padding para dar mais espaço interno */
+  width: 80%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 30px;
   background-color: #333;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra mais suave */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   box-sizing: border-box;
   background: linear-gradient(135deg, rgba(44, 44, 44, 1), rgba(0, 0, 0, 0.6));
-  transition: all 0.3s ease-in-out; /* Transição suave para o efeito flutuante */
+  transition: all 0.3s ease-in-out;
 }
 
-/* Efeito flutuante quando o formulário recebe hover */
 #contact .container:hover {
-  transform: translateY(-5px); /* Move o formulário para cima */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Sombra mais intensa */
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Estilização do título do formulário */
 #contact h2 {
-  font-size: 2rem; /* Tamanho reduzido do título */
+  font-size: 2rem;
   color: #f7f7f7;
   margin-bottom: 15px;
   padding-bottom: 10px;
   border-bottom: 3px solid #555;
-  text-align: center; /* Centraliza o título */
+  text-align: center;
 }
 
-/* Estilização do parágrafo de descrição */
 #contact p {
-  font-size: 1.1rem; /* Tamanho do texto reduzido */
+  font-size: 1.1rem;
   line-height: 1.8;
   color: #ddd;
   margin-bottom: 25px;
-  text-align: center; /* Centraliza o parágrafo */
+  text-align: center;
 }
 
-/* Estilização do formulário */
 #contact form {
   display: flex;
   flex-direction: column;
@@ -45,9 +40,8 @@
   width: 100%;
 }
 
-/* Estilização dos campos de input e textarea */
 #contact input, #contact textarea {
-  padding: 12px; /* Reduzido o padding para um tamanho mais compacto */
+  padding: 12px;
   font-size: 1.1rem;
   border: 1px solid #555;
   border-radius: 8px;
@@ -58,51 +52,44 @@
   transition: border-color 0.3s ease;
 }
 
-/* Foco nos campos de input e textarea */
 #contact input:focus, #contact textarea:focus {
   border-color: #007BFF;
   outline: none;
 }
 
-/* Ajuste no tamanho do textarea */
 #contact textarea {
-  height: 120px; /* Altura reduzida */
+  height: 120px;
   resize: vertical;
 }
 
-/* Estilização das ações do formulário (botões) */
 #contact .form-actions {
   display: flex;
   justify-content: space-between;
   gap: 10px;
 }
 
-/* Estilização dos botões */
 #contact .btn {
   background-color: #555;
   color: #ddd;
   padding: 12px 25px;
   border: none;
   border-radius: 8px;
-  font-size: 1.1rem; /* Tamanho do botão ajustado */
+  font-size: 1.1rem;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  width: 48%; /* Largura do botão ajustada para ficar proporcional */
+  width: 48%;
   text-align: center;
 }
 
-/* Efeito de hover nos botões */
 #contact .btn:hover {
   background-color: #444;
   transform: translateY(-2px);
 }
 
-/* Efeito de click nos botões */
 #contact .btn:active {
   transform: translateY(2px);
 }
 
-/* Responsividade */
 @media screen and (max-width: 1024px) {
   #contact .container {
       width: 90%;
@@ -127,7 +114,6 @@
   }
 }
 
-/* Responsividade para telas menores que 768px */
 @media screen and (max-width: 768px) {
   #contact .container {
       width: 90%;

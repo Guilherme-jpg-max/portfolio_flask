@@ -5,24 +5,27 @@
   flex-wrap: wrap;
 }
 
+
 .project {
   background: linear-gradient(135deg, rgba(44, 44, 44, 1), rgba(26, 26, 26, 1));
   color: #ddd;
   padding: 20px;
   border-radius: 10px;
-  flex: 1 1 calc(33.33% - 40px); /* Cada item ocupa cerca de 1/3 da largura com margem */
-  max-width: 300px; /* Define um limite máximo de tamanho */
-  min-width: 250px; /* Define um limite mínimo de tamanho */
+  flex: 1 1 calc(33.33% - 40px);
+  max-width: 300px;
+  min-width: 250px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
+
 
 .project:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
   background: linear-gradient(135deg, rgba(26, 26, 26, 1), rgba(44, 44, 44, 1));
 }
+
 
 .project h3 {
   font-size: 1.5rem;
@@ -31,15 +34,18 @@
   text-transform: capitalize;
 }
 
+
 .project p {
   font-size: 1rem;
   margin-bottom: 20px;
   color: #bbb;
 }
 
+
 .project footer {
   margin-top: 15px;
 }
+
 
 .project .btn {
   display: inline-block;
@@ -48,33 +54,36 @@
   text-decoration: none;
   padding: 10px 20px;
   border-radius: 5px;
-  background: linear-gradient(135deg, #c0c0c0, #1e1e1e); /* Gradiente prata para preto */
+  background: linear-gradient(135deg, #c0c0c0, #1e1e1e);
   transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
+
 .project .btn:hover {
-  background: linear-gradient(135deg, #d8d8d8, #292929); /* Gradiente mais claro ao passar o mouse */
+  background: linear-gradient(135deg, #d8d8d8, #292929);
   transform: scale(1.05);
-  color: #f0f0f0; /* Cor do texto no hover */
+  color: #f0f0f0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-/* Responsividade */
+
 @media (max-width: 1024px) {
   .project {
-    flex: 1 1 calc(50% - 20px); /* Ocupa metade da largura em telas menores */
+    flex: 1 1 calc(50% - 20px);
   }
 }
+
 
 @media (max-width: 768px) {
   .project {
-    flex: 1 1 calc(50% - 20px); /* Ocupa metade da largura em telas menores */
+    flex: 1 1 calc(50% - 20px);
   }
 }
 
+
 @media (max-width: 480px) {
   .project {
-    flex: 1 1 100%; /* Ocupa 100% da largura em telas muito pequenas */
+    flex: 1 1 100%;
   }
 }
