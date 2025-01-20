@@ -1,195 +1,106 @@
-/* Home Section */
+/* Estilo Principal */
 #home {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: linear-gradient(135deg, rgba(34, 34, 34, 1), rgba(0, 0, 0, 0.8));
-  color: #f0f0f0;
-  text-align: center;
-  position: relative;
-  padding: 0 20px;
-  box-sizing: border-box;
+  height: 100vh; /* Ocupa toda a altura da tela */
+  background-color: #1a1a1a; /* Cor mais escura de fundo */
+  color: #f7f7f7;
 }
 
-.home-container {
+.main-section {
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  max-width: 1600px; /* Largura máxima para o conteúdo */
+  align-items: center;
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px;
+  background-color: #2a2a2a; /* Cor de fundo da seção */
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra suave para efeito de flutuação */
 }
 
-#home::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('path-to-background-image.jpg'); /* Imagem de fundo opcional */
-  background-size: cover;
-  background-position: center;
-  opacity: 0.3;
-  z-index: -1;
-  filter: blur(10px); /* Desfoque no fundo */
+.text-content {
+  flex: 1;
+  text-align: center; /* Centraliza o texto */
 }
 
-.intro {
-  max-width: 90%;
-  padding: 90px;
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  color: #f0f0f0;
-  height: 70%;
-}
-
-/* Estilização do contêiner de imagem */
-.image-container {
-  max-width: 50%;
-  position: relative;
-  overflow: hidden;
-  width: 400px;
-  height: 400px;
-}
-
-.image-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-.intro h2 {
-  font-size: 3rem;
-  font-weight: 700;
+.main-title {
+  font-size: 3rem; /* Tamanho maior para o título */
   margin-bottom: 20px;
-  color: #f7f7f7;
-  letter-spacing: 2px;
+  color: #f1f1f1; /* Cor mais clara */
 }
 
-.roles p {
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: #aaa;
-  margin-bottom: 15px;
-}
-
-.intro p {
-  font-size: 1rem;
-  color: #ddd;
+.subtitle {
+  font-size: 1.3rem; /* Aumenta o subtítulo */
   margin-bottom: 30px;
+  color: #bbb; /* Cor cinza para o subtítulo */
 }
 
 .actions {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 15px;
 }
 
 .actions .btn {
-  background-color: #444;
-  color: #f0f0f0;
-  padding: 12px 24px;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-weight: 500;
+  display: inline-block;
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  border-radius: 8px; /* Bordas arredondadas mais suaves */
   text-decoration: none;
   transition: all 0.3s ease;
-  border: 2px solid transparent;
 }
 
-.actions .btn:hover {
-  background-color: #f0f0f0;
-  color: #333;
-  border-color: #333;
-  transform: translateY(-5px);
+.actions .btn.primary {
+  background: #444;
+  color: #fff;
+}
+
+.actions .btn.secondary {
+  background: #555;
+  color: #fff;
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  height: 600px; /* Define a altura fixa */
+  overflow: hidden; /* Remove o scroll externo */
+  background-color: #333; /* Cor de fundo para a área da imagem */
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Sombra suave no card da imagem */
+}
+
+.image-container iframe {
+  width: 100%;
+  max-width: 800px;
+  height: 100%; /* Ocupa toda a altura definida */
+  border-radius: 10px;
+  overflow: hidden;
+  border: none;
+  transition: transform 0.3s ease; /* Efeito de transformação para flutuação */
+}
+
+.image-container iframe:hover {
+  transform: translateY(-10px); /* Efeito flutuante no hover */
 }
 
 /* Responsividade */
-@media screen and (max-width: 1024px) {
-  #home {
-    height: auto;
-    padding-top: 40px;
-  }
-
-  .intro {
-    padding: 20px;
-    max-width: 100%;
-    height: auto;
-  }
-
-  .image-container {
-    max-width: 40%;
-    width: 300px;
-    height: 300px;
-  }
-
-  .intro h2 {
-    font-size: 2.5rem;
-  }
-
-  .roles p {
-    font-size: 1.1rem;
-  }
-
-  .intro p {
-    font-size: 1rem;
-  }
-
-  .actions {
+@media (max-width: 768px) {
+  .main-section {
     flex-direction: column;
-    gap: 15px;
+    text-align: center;
   }
 
-  .actions .btn {
-    width: 100%; /* Garante que os botões ocupem toda a largura disponível */
-    padding: 12px;
-  }
-}
-
-/* Responsividade para telas menores que 768px */
-@media screen and (max-width: 768px) {
-  #home {
-    height: auto;
-    padding-top: 40px;
-  }
-
-  .home-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .image-container {
-    width: 200px;
-    height: 200px;
+  .text-content {
     margin-bottom: 20px;
   }
 
-  .intro {
-    padding: 15px;
-    max-width: 100%;
-  }
-
-  .intro h2 {
-    font-size: 2.2rem;
-  }
-
-  .roles p {
-    font-size: 1rem;
-  }
-
-  .intro p {
-    font-size: 0.9rem;
-  }
-
-  .actions {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .actions .btn {
-    width: 100%; /* Garante que os botões ocupem toda a largura disponível */
-    padding: 12px;
+  .image-container iframe {
+    max-width: 90%;
   }
 }

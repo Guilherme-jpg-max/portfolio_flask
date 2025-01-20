@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash, jsonify
+from flask import Blueprint, render_template, request, jsonify
 from app import mail
 from .forms import process_contact_form
 import os
@@ -6,27 +6,45 @@ from .github_utils import get_github_repos
 
 bp = Blueprint('main', __name__)
 
+# Função para obter repositórios do GitHub com tratamento de erro
 def get_repos():
-    return get_github_repos()
+    try:
+        return get_github_repos()
+    except Exception as e:
+        print(f"Erro ao buscar repositórios: {e}")
+        return []
 
+
+# Função para renderizar templates com repositórios
+def render_templates(template_name, **context):
+    repos = get_repos()  # Obter os repositórios
+    return render_template(template_name, repos=repos, **context)
+
+
+# Rota principal (Home)
 @bp.route('/')
 def index():
-    repos = get_repos()
-    return render_template('index.html', repos=repos, title="Portfólio Guilherme Carlos")
+    return render_templates('index.html', title="Portfólio Guilherme Carlos")
 
+
+# Rota para a seção de Projetos
 @bp.route('/projects')
 def projects():
-    repos = get_repos()
-    return render_template('index.html', repos=repos, title="Projects", section='projects')
+    return render_templates('index.html', title="Projects", section='projects')
 
 
+# Rota para a seção "Sobre mim"
 @bp.route('/about')
 def about():
-    return render_template('index.html', title="About Me", section='about')
+    return render_templates('index.html', title="About Me", section='about')
 
+
+# Rota para o envio do formulário de contato
 @bp.route('/contact', methods=['POST'])
 def contact():
+    # Validação e processamento do formulário de contato
     success, msg = process_contact_form(request, mail, os)
+    
     if success:
         try:
             mail.send(msg)
@@ -35,6 +53,8 @@ def contact():
             return jsonify({"success": False, "message": "Ocorreu um erro ao enviar a mensagem. Tente novamente mais tarde."}), 500
     return jsonify({"success": False, "message": "Dados inválidos."}), 400
 
+
+# Rota para a seção de Skills
 @bp.route('/skills')
 def skills():
-    return render_template('index.html', title="Skills", section='skills')
+    return render_templates('index.html', title="Skills", section='skills')

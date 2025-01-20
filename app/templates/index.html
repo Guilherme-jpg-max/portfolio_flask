@@ -12,7 +12,6 @@
     <link href="{{ url_for('static', filename='css/skills_me.css') }}" rel="stylesheet" />
     <link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}" type="image/png">
 
-    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
     <title>{{ title }}</title>
@@ -25,18 +24,17 @@
                 <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo">
             </div>
     
-            <h1>Portfolio of a Back-end Developer</h1>
+            <h1>Portfolio Back-end Developer</h1>
             
-            <!-- Menu Hamburguer -->
-            <div class="menu-hamburguer" onclick="toggleMenu()">&#9776;</div> <!-- Ícone de menu hambúrguer -->
+            <div class="menu-hamburguer" onclick="toggleMenu()">&#9776;</div>
     
             <nav>
                 <ul id="nav-links">
-                    <li class="{{ 'active' if section == 'home' else '' }}"><a href="#home">Home</a></li>
-                    <li class="{{ 'active' if section == 'skills' else '' }}"><a href="#skills">Skills</a></li>
-                    <li class="{{ 'active' if section == 'about' else '' }}"><a href="#about">About Me</a></li>
-                    <li class="{{ 'active' if section == 'projects' else '' }}"><a href="#projects">Projects</a></li>
-                    <li class="{{ 'active' if section == 'contact' else '' }}"><a href="#contact">Contact</a></li>
+                    <li class="{{ 'active' if section == 'home' else '' }}"><a href="#home">Inicio</a></li>
+                    <li class="{{ 'active' if section == 'skills' else '' }}"><a href="#skills">Habilidades</a></li>
+                    <li class="{{ 'active' if section == 'about' else '' }}"><a href="#about">Sobre mim</a></li>
+                    <li class="{{ 'active' if section == 'projects' else '' }}"><a href="#projects">Projetos</a></li>
+                    <li class="{{ 'active' if section == 'contact' else '' }}"><a href="#contact">Contato</a></li>
                 </ul>
             </nav>
     
@@ -53,28 +51,31 @@
 
     <main>
         <section id="home">
-            <div class="home-container">
-                <div class="intro">
-                    <h2>Guilherme</h2>
-                    <div class="roles">
-                        <p>Back-end Developer</p>
-                        <p>Experienced in Python, Django, Flask, PostgreSQL, MySQL, and Java.</p>
-                    </div>
-                    <p>Passionate about creating efficient solutions.</p>
-                    <div class="actions">
-                        <a href="#projects" class="btn">View Projects</a>
-                        <a href="#contact" class="btn">Hire Me</a>
-                    </div>
+            <!-- Seção Principal -->
+            <div class="main-section">
+              <div class="text-content">
+                <h2 class="main-title">Hey Dev, Me Guilherme.</h2>
+                <p class="subtitle">Um desenvolvedor back-end junior qualificado, e pronto para enfrentar qualquer desafio.</p>
+                <div class="actions">
+                  <a href="#contact" class="btn secondary">Entre em contato comigo!</a>
+                  <a href="#projects" class="btn primary">Ver Projetos</a>
                 </div>
-                <div class="image-container">
-                    <img src="{{ url_for('static', filename='img/tela.jpg') }}" alt="Your Image" />
-                </div>
+              </div>
+              <div class="image-container">
+                <iframe 
+                  src="{{ url_for('static', filename='img/python.html')}}" 
+                  width="100%" 
+                  height="600" 
+                  style="border: none; overflow: hidden; border-radius: 10px;">
+                </iframe>
+              </div>
             </div>
         </section>
+          
 
         <section id="skills">
-            <h2>Skills</h2>
-            <p>Here are some of the technologies I work with:</p>
+            <h2>Habilidades</h2>
+            <p>Aqui estão algumas das tecnologias com as quais tenho conhecimentos:</p>
             <div class="skills-container">
                 <div class="skill">
                     <button onclick="toggleSkill('python')">Python</button>
@@ -129,7 +130,7 @@
         
         <section id="about">
             <div class="container">
-                <h2>About Me</h2>
+                <h2>Sobre mim</h2>
                 <p>
                     Hey, Dev!<br>
                     Me chamo <strong>Guilherme</strong>, sou desenvolvedor back-end e estudante do quinto semestre de 
@@ -149,15 +150,15 @@
         </section>        
 
         <section id="projects">
-            <h2>My Projects</h2>
-            <p>Explore some of my recent projects.</p>
+            <h2>Meus Projetos</h2>
+            <p>Explore alguns dos meus projetos recentes.</p>
             <div class="projects-container">
                 {% for project in repos %}
                 <article class="project">
                     <h3>{{ project.name }}</h3>
                     <p>{{ project.description or "No description provided." }}</p>
                     <footer>
-                        <a href="{{ project.html_url }}" target="_blank" class="btn">View on GitHub</a>
+                        <a href="{{ project.html_url }}" target="_blank" class="btn">Ver GitHub</a>
                     </footer>
                 </article>
                 {% endfor %}
@@ -166,8 +167,8 @@
 
         <section id="contact">
             <div class="container">
-                <h2>Contact Me</h2>
-                <p>Reach out for collaborations or inquiries.</p>
+                <h2>Fale comigo</h2>
+                <p>Entre em contato para colaborações ou dúvidas.</p>
                 <div id="flash-container"></div>
        
                 <form id="contact-form" action="{{ url_for('main.contact') }}" method="post">
@@ -181,8 +182,8 @@
                     <textarea id="message" name="message" placeholder="Your message here" required></textarea>
                 
                     <div class="form-actions">
-                        <button type="reset" class="btn">Clear</button>
-                        <button type="submit" class="btn">Send Message</button>
+                        <button type="reset" class="btn">Corrigir</button>
+                        <button type="submit" class="btn">Enviar Menssagem</button>
                     </div>
                 </form>
             </div>

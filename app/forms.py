@@ -12,12 +12,10 @@ def is_valid_email(email):
 
 # Função para processar o formulário de contato
 def process_contact_form(request, mail, os):
-    # Captura os dados do formulário
     name = request.form.get('name', '').strip()
     email = request.form.get('email', '').strip()
     message = request.form.get('message', '').strip()
 
-    # Validação dos campos
     if not name or not email or not message:
         flash("Por favor, preencha todos os campos.", 'error')
         return False, None
@@ -27,20 +25,18 @@ def process_contact_form(request, mail, os):
         return False, None
 
     try:
-        # Preparar a mensagem a ser enviada
         msg = Message(
             subject=f"Nova mensagem de {name}",
-            sender=os.getenv('MAIL_DEFAULT_SENDER'),  # O remetente padrão configurado no .env
-            recipients=[os.getenv('MAIL_USERNAME')],  # Seu e-mail para receber as mensagens
+            sender=os.getenv('MAIL_DEFAULT_SENDER'),
+            recipients=[os.getenv('MAIL_USERNAME')],
             body=f"Nome: {name}\nE-mail: {email}\n\nMensagem:\n{message}"
         )
         # Adiciona o campo Reply-To para que as respostas sejam direcionadas ao e-mail do usuário
         msg.reply_to = email
 
-        return True, msg  # Retorna True e o objeto Message para o envio
+        return True, msg 
 
     except Exception as e:
-        # Log de erro
         print(f"Erro ao processar o formulário: {e}")
         flash("Ocorreu um erro ao enviar a mensagem. Tente novamente mais tarde.", 'error')
         return False, None
