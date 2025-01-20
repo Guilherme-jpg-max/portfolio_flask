@@ -64,6 +64,7 @@
   color: #fff;
 }
 
+/* Estilo para a imagem dentro do container */
 .image-container {
   flex: 1;
   display: flex;
@@ -75,18 +76,18 @@
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Sombra suave no card da imagem */
 }
 
-.image-container iframe {
-  width: 100%;
-  max-width: 800px;
-  height: 100%; /* Ocupa toda a altura definida */
-  border-radius: 10px;
-  overflow: hidden;
-  border: none;
-  transition: transform 0.3s ease; /* Efeito de transformação para flutuação */
+.image-container img {
+  width: 100%;        /* Faz a imagem ocupar 100% da largura do container */
+  height: auto;       /* Mantém a proporção da imagem */
+  object-fit: contain; /* Garante que a imagem se ajuste ao tamanho sem distorção */
+  border-radius: 10px; /* Bordas arredondadas, caso deseje */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Sombra para dar um efeito de profundidade */
+  transition: transform 0.3s ease; /* Efeito de flutuação no hover */
 }
 
-.image-container iframe:hover {
-  transform: translateY(-10px); /* Efeito flutuante no hover */
+/* Efeito de flutuação no hover */
+.image-container img:hover {
+  transform: translateY(-10px); /* Efeito flutuante ao passar o mouse */
 }
 
 /* Responsividade */
@@ -100,7 +101,12 @@
     margin-bottom: 20px;
   }
 
-  .image-container iframe {
-    max-width: 90%;
+  .image-container {
+    height: 400px; /* Ajuste a altura da imagem conforme necessário */
+  }
+
+  .image-container img {
+    max-width: 90%; /* Garante que a imagem se ajuste à tela */
+    height: auto;   /* Mantém a proporção */
   }
 }

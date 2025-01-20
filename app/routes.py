@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, jsonify
+from flask import Blueprint, render_template, request, jsonify, send_from_directory
 from app import mail
 from .forms import process_contact_form
 import os
@@ -17,7 +17,7 @@ def get_repos():
 
 # Função para renderizar templates com repositórios
 def render_templates(template_name, **context):
-    repos = get_repos()  # Obter os repositórios
+    repos = get_repos()
     return render_template(template_name, repos=repos, **context)
 
 
