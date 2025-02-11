@@ -1,8 +1,9 @@
-from flask import Blueprint, render_template, request, jsonify
+from flask import Blueprint, render_template, request, jsonify, send_from_directory
 from app import mail
 from .forms import process_contact_form
 import os
 from .github_utils import get_github_repos
+
 
 bp = Blueprint('main', __name__)
 
@@ -58,3 +59,7 @@ def contact():
 @bp.route('/skills')
 def skills():
     return render_templates('index.html', title="Skills", section='skills')
+
+@bp.route('/curriculo')
+def baixar_curriculo():
+    return send_from_directory('static/curriculo', 'curriculo.pdf')
