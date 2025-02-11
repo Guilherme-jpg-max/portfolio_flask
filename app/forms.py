@@ -1,4 +1,3 @@
-# forms.py
 import re
 from flask_mail import Message
 from flask import flash
@@ -31,7 +30,7 @@ def process_contact_form(request, mail, os):
             recipients=[os.getenv('MAIL_USERNAME')],
             body=f"Nome: {name}\nE-mail: {email}\n\nMensagem:\n{message}"
         )
-        # Adiciona o campo Reply-To para que as respostas sejam direcionadas ao e-mail do usuário
+        # Adiciona o campo Reply-To para que as respostas sejam direcionadas ao meu e-mail
         msg.reply_to = email
 
         return True, msg 
