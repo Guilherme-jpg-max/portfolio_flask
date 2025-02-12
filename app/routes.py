@@ -59,12 +59,3 @@ def contact():
 @bp.route('/skills')
 def skills():
     return render_templates('index.html', title="Skills", section='skills')
-
-@bp.route('/curriculo')
-def baixar_curriculo():
-    caminho = os.path.join(current_app.root_path, 'static', 'curriculo', 'curriculo.pdf')
-    
-    if not os.path.exists(caminho):
-        return "Arquivo não encontrado", 404
-    
-    return send_file(caminho, mimetype='application/pdf', as_attachment=True)
