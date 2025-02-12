@@ -1,7 +1,7 @@
 import os
 import requests
 
-
+# Função para redirecionar ao meu git e pegar os repositorios
 def get_github_repos():
 
     github_user = 'Guilherme-jpg-max'

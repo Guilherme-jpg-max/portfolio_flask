@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, jsonify, send_from_directory
+from flask import Blueprint, render_template, request, jsonify, send_file
 from app import mail
 from .forms import process_contact_form
 import os
@@ -62,4 +62,4 @@ def skills():
 
 @bp.route('/curriculo')
 def baixar_curriculo():
-    return send_from_directory('static/curriculo', 'curriculo.pdf')
+    return send_file('static/curriculo/curriculo.pdf', mimetype='application/pdf', as_attachment=False)
