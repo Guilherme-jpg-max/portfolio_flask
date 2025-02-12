@@ -63,9 +63,9 @@ def skills():
 @bp.route('/curriculo')
 def baixar_curriculo():
     caminho = os.path.join(current_app.static_folder, 'curriculo/curriculo.pdf')
+    print("Caminho do arquivo no servidor:", caminho)
     
     if not os.path.exists(caminho):
-        return "Arquivo não encontrado", 404, print(caminho)
-
+        return "Arquivo não encontrado", 404
 
     return send_file(caminho, mimetype='application/pdf', as_attachment=True)
