@@ -5,7 +5,7 @@ mail = Mail()
 
 
 def create_app():
-    app = Flask(__name__)
+    app = Flask(__name__, static_folder='static')
 
     # Carregar configurações do arquivo config.py
     app.config.from_pyfile('../config.py')
