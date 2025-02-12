@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, jsonify, send_file
+from flask import Blueprint, render_template, request, jsonify, send_file, current_app
 from app import mail
 from .forms import process_contact_form
 import os
@@ -62,9 +62,10 @@ def skills():
 
 @bp.route('/curriculo')
 def baixar_curriculo():
-    caminho = os.path.join(os.getcwd(), 'app/static/curriculo/curriculo.pdf')
+    caminho = os.path.join(current_app.static_folder, 'curriculo/curriculo.pdf')
     
     if not os.path.exists(caminho):
-        return "Arquivo não encontrado", 404
+        return "Arquivo não encontrado", 404, print(caminho)
 
-    return send_file(caminho, mimetype='application/pdf', as_attachment=False)
+
+    return send_file(caminho, mimetype='application/pdf', as_attachment=True)
