@@ -17,7 +17,7 @@ def get_github_repos():
     if response.status_code == 200:
         repos = response.json()
 
-        selected_repos = ['portfolio_flask', 'lista_tarefas', 'finan-as']
+        selected_repos = ['portfolio_flask', 'Meu_site']
         filtered_repos = [repo for repo in repos if repo['name'] in selected_repos]
         return filtered_repos
     else:
